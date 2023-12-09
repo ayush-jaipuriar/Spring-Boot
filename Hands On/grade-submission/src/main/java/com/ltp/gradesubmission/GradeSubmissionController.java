@@ -10,6 +10,7 @@ public class GradeSubmissionController {
     @GetMapping("/grades")
     public String getMethodName() {
         System.out.println("Entered getMethodName method");
+        System.out.println("Pushing for github commit");
         return "grades";
     }
     
