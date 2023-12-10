@@ -3,7 +3,7 @@ package model;
 public class Grade {
     private String name;
     private String subject;
-    private String score;
+    private Integer score;
 
     public String getName() {
         return this.name;
@@ -21,20 +21,18 @@ public class Grade {
         this.subject = subject;
     }
 
-    public String getScore() {
+    public Integer getScore() {
         return this.score;
     }
 
-    public void setScore(String score) {
+    public void setScore(Integer score) {
         this.score = score;
     }
-    
 
-    public Grade(String name, String subject, String score) {
+    public Grade(String name, String subject, int score) {
         this.name = name;
         this.subject = subject;
         this.score = score;
     }
-    
 
 }
