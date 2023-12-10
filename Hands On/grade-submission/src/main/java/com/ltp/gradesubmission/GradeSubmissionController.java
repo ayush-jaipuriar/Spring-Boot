@@ -13,7 +13,7 @@ public class GradeSubmissionController {
     @GetMapping("/grades")
     public String getMethodName(Model model) {
         Grade grade = new Grade("Ayush", "Hindi", 43);
-        model.addAttribute("grades", grade);
+        model.addAttribute("grade", grade);
         return "grades";
     }
     
