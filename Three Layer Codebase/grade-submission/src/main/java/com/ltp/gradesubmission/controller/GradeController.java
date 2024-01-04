@@ -1,4 +1,4 @@
-package com.ltp.gradesubmission;
+package com.ltp.gradesubmission.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,15 +12,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.ltp.gradesubmission.Constants;
+import com.ltp.gradesubmission.Grade;
+import com.ltp.gradesubmission.repository.GradeRepository;
+
 @Controller
 public class GradeController {
 
-    List<Grade> studentGrades = new ArrayList<>();
+    GradeRepository gradeRepository = new GradeRepository();
 
     @GetMapping("/")
     public String getForm(Model model, @RequestParam(required = false) String id) {
         int index = getGradeIndex(id);
-        model.addAttribute("grade", index == Constants.NOT_FOUND ? new Grade() : studentGrades.get(index));
+        model.addAttribute("grade", index == Constants.NOT_FOUND ? new Grade() : gradeRepository.getGrade(index));
         return "form";
     }
 
@@ -30,7 +34,7 @@ public class GradeController {
 
         int index = getGradeIndex(grade.getId());
         if (index == Constants.NOT_FOUND) {
-            studentGrades.add(grade);
+            gradeRepository.addGrade(grade);
         } else {
             studentGrades.set(index, grade);
         }
