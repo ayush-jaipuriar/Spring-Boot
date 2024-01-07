@@ -19,4 +19,8 @@ public class GradeRepository {
     public void setGrade(Grade grade, int index) {
         studentGrades.set(index, grade);
     }
+
+    public List<Grade> getGrades() {
+        return studentGrades;
+    }
 }
