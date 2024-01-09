@@ -12,9 +12,6 @@ public class ContactServiceImpl implements ContactService {
 
     @Autowired
     private ContactRepository contactRepository;
-    
-
-
 
     private int findIndexById(String id) {
         return IntStream.range(0, contactRepository.getContacts().size())
