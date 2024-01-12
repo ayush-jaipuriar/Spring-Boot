@@ -3,3 +3,4 @@ This repository is a practice space for learning and exploring Spring Boot frame
 Spring Security for authentication and authorization
 Spring Data JPA for database access and management
 Swagger API documentation for easy-to-use and well-documented APIs
+
