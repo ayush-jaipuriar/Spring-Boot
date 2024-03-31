@@ -1,4 +1,4 @@
-package com.ayush.initializerdemo;
+package com.ayush.controllers;
 
 // Import necessary annotations and classes for Spring Boot web application development
 import org.springframework.beans.factory.annotation.Value;

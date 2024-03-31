@@ -1,4 +1,4 @@
-package com.luv2code.springboot.demo.mycoolapp;
+package com.luv2code.springboot.demo.applications;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
