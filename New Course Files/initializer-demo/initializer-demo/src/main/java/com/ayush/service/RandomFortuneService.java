@@ -14,6 +14,10 @@ public class RandomFortuneService implements FortuneService {
 
     private Random random = new Random();
 
+    public RandomFortuneService() {
+        System.out.println("Initialized RandomFortuneService class");
+    }
+
     @Override
     public String getFortune() {
         System.out.println("Entered getFortune method inside RandomFortuneService");
