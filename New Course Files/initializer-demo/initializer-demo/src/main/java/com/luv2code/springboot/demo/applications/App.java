@@ -1,8 +1,10 @@
 package com.luv2code.springboot.demo.applications;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 
 import com.ayush.service.FortuneService;
 import com.ayush.service.LazyService;
@@ -29,6 +31,11 @@ public class App {
         // instead of during Spring initialization like other beans
         FortuneService service = context.getBean("lazyService", LazyService.class);
         ((LazyService) service).doSomething();
+    }
+
+    @Bean
+    public CommandLineRunner commandLineRunner(String[] args) {
+        return runner -> System.out.println("Entered commandLineRunner method of App");
     }
 
 }
