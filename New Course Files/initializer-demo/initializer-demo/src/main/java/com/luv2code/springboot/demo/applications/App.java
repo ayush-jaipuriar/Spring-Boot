@@ -9,6 +9,9 @@ import org.springframework.context.annotation.Bean;
 import com.ayush.service.FortuneService;
 import com.ayush.service.LazyService;
 
+import DAO.ActorDAO;
+import entity.Actor;
+
 @SpringBootApplication
 public class App {
 
@@ -34,8 +37,19 @@ public class App {
     }
 
     @Bean
-    public CommandLineRunner commandLineRunner(String[] args) {
-        return runner -> System.out.println("Entered commandLineRunner method of App");
+    public CommandLineRunner commandLineRunner(ActorDAO actorDAO) {
+        return runner -> createActor(actorDAO);
+    }
+
+    private void createActor(ActorDAO actorDAO) {
+        Actor actor = new Actor();
+        actor.setId(69);
+        actor.setFirstName("Ayush");
+        actor.setLastName("Jaipuiriar");
+        actor.setLastUpdate(null);
+        actorDAO.save(actor);
+
+        System.out.println("Saved Actor ID : " + actor);
     }
 
 }
