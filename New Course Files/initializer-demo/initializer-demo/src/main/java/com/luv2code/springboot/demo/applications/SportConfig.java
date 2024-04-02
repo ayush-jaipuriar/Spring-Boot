@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
+@ComponentScan("com.ayush")
 @PropertySource("classpath:application.properties")
 public class SportConfig {
     // No explicit bean definitions required as we are using component scanning

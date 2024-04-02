@@ -1,17 +1,19 @@
 package com.luv2code.springboot.demo.applications;
 
+// Import necessary Spring Boot and other classes
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+// Import service and DAO classes
 import com.ayush.service.FortuneService;
 import com.ayush.service.LazyService;
-
 import DAO.ActorDAO;
 import entity.Actor;
 
+// Main Spring Boot application class
 @SpringBootApplication
 public class App {
 
@@ -36,11 +38,14 @@ public class App {
         ((LazyService) service).doSomething();
     }
 
+    // Define a CommandLineRunner bean that will be executed after the application context is loaded
     @Bean
     public CommandLineRunner commandLineRunner(ActorDAO actorDAO) {
+        // Return a lambda function that will be executed when the application starts
         return runner -> createActor(actorDAO);
     }
 
+    // Method to create and save an Actor object using the ActorDAO
     private void createActor(ActorDAO actorDAO) {
         Actor actor = new Actor();
         actor.setId(69);
@@ -51,5 +56,4 @@ public class App {
 
         System.out.println("Saved Actor ID : " + actor);
     }
-
 }
