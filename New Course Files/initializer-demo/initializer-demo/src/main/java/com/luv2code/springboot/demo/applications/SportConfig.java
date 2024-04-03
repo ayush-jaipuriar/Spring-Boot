@@ -1,12 +1,20 @@
 package com.luv2code.springboot.demo.applications;
 
+// Import necessary Spring Boot annotations for configuration and component scanning
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
+// Define a configuration class for the application
 @Configuration
-@ComponentScan("com.ayush")
-@PropertySource("classpath:application.properties")
 public class SportConfig {
-    // No explicit bean definitions required as we are using component scanning
+
+    // Specify the base package to scan for components
+    @ComponentScan("com.ayush")
+
+    // Load properties from the specified file
+    @PropertySource("classpath:application.properties")
+
+    // No explicit bean definitions are required as we are using component scanning
+    // Spring will automatically detect and register beans in the specified package
 }
